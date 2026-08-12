@@ -15,16 +15,25 @@ let package = Package(
         .target(
             name: "ContentScopeScripts_Aggregation",
             dependencies: ["ContentScopeScripts"],
+            resources: [
+                .process("dist/contentScope.js"),
+                .process("dist/contentScopeIsolated.js"),
+                .process("dist/duckAiDataClearing.js"),
+                .process("dist/duckAiChatHistory.js"),
+                .copy("dist/pages")
+            ],
+            packageAccess: false,
             swiftSettings: [.define("SCIPIO_PRECOMPILED_BINARY_WRAPPER")]
         ),
         .binaryTarget(
             name: "ContentScopeScripts",
-            url: "https://github.com/swift-precompiled/content-scope-scripts/releases/download/16.6.0/ContentScopeScripts-c48c5bb364612aae362ca4db09729c6f247cfe8c03b279b9cc51c973143f18f1.xcframework.zip",
-            checksum: "c48c5bb364612aae362ca4db09729c6f247cfe8c03b279b9cc51c973143f18f1"
+            url: "https://github.com/swift-precompiled/content-scope-scripts/releases/download/16.6.0/ContentScopeScripts-11f5ccb411625f96014b6eaa2173b4bbd7c1655eafe7ac6d871ae040e036b131.xcframework.zip",
+            checksum: "11f5ccb411625f96014b6eaa2173b4bbd7c1655eafe7ac6d871ae040e036b131"
         ),
         .target(
             name: "ContentScopeScripts_PrecompiledProduct",
-            dependencies: ["ContentScopeScripts_Aggregation"]
+            dependencies: ["ContentScopeScripts_Aggregation"],
+            packageAccess: false
         )
     ]
 )
