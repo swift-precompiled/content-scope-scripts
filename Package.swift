@@ -8,7 +8,7 @@ let package = Package(
     products: [
         .library(
             name: "ContentScopeScripts",
-            targets: ["ContentScopeScripts_PrecompiledProduct"]
+            targets: ["ContentScopeScripts", "ContentScopeScripts_PrecompiledProduct"]
         )
     ],
     targets: [
@@ -19,8 +19,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "ContentScopeScripts",
-            url: "https://github.com/swift-precompiled/content-scope-scripts/releases/download/16.6.0/ContentScopeScripts-0df639416d72d53cf222e7d29311bd0ea8db4d371fcb9ec9e05eb8acc42a381d.xcframework.zip",
-            checksum: "0df639416d72d53cf222e7d29311bd0ea8db4d371fcb9ec9e05eb8acc42a381d"
+            url: "https://github.com/swift-precompiled/content-scope-scripts/releases/download/16.6.0/ContentScopeScripts-c48c5bb364612aae362ca4db09729c6f247cfe8c03b279b9cc51c973143f18f1.xcframework.zip",
+            checksum: "c48c5bb364612aae362ca4db09729c6f247cfe8c03b279b9cc51c973143f18f1"
         ),
         .target(
             name: "ContentScopeScripts_PrecompiledProduct",
